@@ -1,4 +1,3 @@
-$CONSOLE:ONLY
 DECLARE STATIC LIBRARY "struct"
     FUNCTION newStr%& ()
     SUB clearStr (ptr%&)
@@ -44,12 +43,3 @@ DECLARE STATIC LIBRARY "struct"
     SUB dumpBytes (ptr%&)
     FUNCTION fromStruct (src%&, BYVAL size&&)
 END DECLARE
-
-str%& = newStr%&
-addChar str%&, 10
-addInt str%&, 999
-addLong str%&, 748274
-PRINT getChar(str%&, 0)
-dumpBytes str%&
-
-
