@@ -1,0 +1,55 @@
+$CONSOLE:ONLY
+DECLARE STATIC LIBRARY "struct"
+    FUNCTION newStr%& ()
+    SUB clearStr (ptr%&)
+    SUB freeStr (ptr%&)
+    FUNCTION getPointer%& (ptr%&)
+    FUNCTION getSize&& (ptr%&)
+    SUB setOffset (ptr%&, BYVAL pos&&)
+    FUNCTION getOffset&& (ptr%&)
+    SUB addChar (ptr%&, BYVAL tval%%)
+    SUB addShort (ptr%&, BYVAL tval%)
+    SUB addInt (ptr%&, BYVAL tval&)
+    SUB addLong (ptr%&, BYVAL tval&&)
+    SUB adduChar (ptr%&, BYVAL tval~%%)
+    SUB adduShort (ptr%&, BYVAL tval~%)
+    SUB adduInt (ptr%&, BYVAL tval~&)
+    SUB adduLong (ptr%&, BYVAL tval~&&)
+    SUB addFloat (ptr%&, BYVAL tval!)
+    SUB addDouble (ptr%&, BYVAL tval#)
+    SUB addPtr (ptr%&, ptr2%&)
+    SUB addStr (ptr%&, ptr2%&, BYVAL size&&)
+    FUNCTION getChar%% (ptr%&, BYVAL size&&)
+    FUNCTION getShort% (ptr%&, BYVAL size&&)
+    FUNCTION getInt& (ptr%&, BYVAL size&&)
+    FUNCTION getLong&& (ptr%&, BYVAL size&&)
+    FUNCTION getuChar~%% (ptr%&, BYVAL size&&)
+    FUNCTION getuShort~% (ptr%&, BYVAL size&&)
+    FUNCTION getuInt~& (ptr%&, BYVAL size&&)
+    FUNCTION getuLong~&& (ptr%&, BYVAL size&&)
+    FUNCTION getFloat! (ptr%&, BYVAL size&&)
+    FUNCTION getDouble# (ptr%&, BYVAL size&&)
+    FUNCTION getPtr%& (ptr%&, BYVAL size&&)
+    SUB setChar (ptr%&, BYVAL size&&, BYVAL tval%%)
+    SUB setShort (ptr%&, BYVAL size&&, BYVAL tval%)
+    SUB setInt (ptr%&, BYVAL size&&, BYVAL tval&)
+    SUB setLong (ptr%&, BYVAL size&&, BYVAL tval&&)
+    SUB setuChar (ptr%&, BYVAL size&&, BYVAL tval~%%)
+    SUB setuShort (ptr%&, BYVAL size&&, BYVAL tval~%)
+    SUB setuInt (ptr%&, BYVAL size&&, BYVAL tval~&)
+    SUB setuLong (ptr%&, BYVAL size&&, BYVAL tval~&&)
+    SUB setFloat (ptr%&, BYVAL size&&, BYVAL tval!)
+    SUB setDouble (ptr%&, BYVAL size&&, BYVAL tval#)
+    SUB setPtr (ptr%&, BYVAL size&&, ptr2%&)
+    SUB dumpBytes (ptr%&)
+    FUNCTION fromStruct (src%&, BYVAL size&&)
+END DECLARE
+
+str%& = newStr%&
+addChar str%&, 10
+addInt str%&, 999
+addLong str%&, 748274
+PRINT getChar(str%&, 0)
+dumpBytes str%&
+
+
